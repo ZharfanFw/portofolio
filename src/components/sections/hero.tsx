@@ -8,7 +8,7 @@ export function Hero() {
         {/* Left Side: Headline and Subtext */}
         <div className="flex flex-col gap-6 max-w-xl text-left">
           <span className="text-xs uppercase tracking-widest text-accent font-semibold p3-glow">
-            Shadow Hour Developer
+            Dark Hour Developer
           </span>
           <h1 className="font-heading text-6xl md:text-8xl font-bold uppercase tracking-tight leading-none text-ink">
             ZHARFAN

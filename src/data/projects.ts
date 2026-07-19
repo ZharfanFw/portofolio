@@ -18,7 +18,7 @@ export const projects: Project[] = [
     tech: "Go • Kafka • Postgres • AKS",
     period: "Mar 2026 – Jun 2026",
     slug: "buroqet",
-    link: "https://github.com/zharfanfw",
+    link: "https://github.com/ZharfanFw/buroqet",
   },
   {
     numeral: "XIV",
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     tech: "Node.js • IoT • TF.js • React",
     period: "Apr 2026 – May 2026",
     slug: "smart-bin",
-    link: "https://github.com/zharfanfw",
+    link: "https://github.com/ZharfanFw/pemilahan-sampah-iot",
   },
   {
     numeral: "V",
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     tech: "Fastify • MySQL • Vue • React Native",
     period: "Oct 2025 – Jan 2026",
     slug: "kailku",
-    link: "https://github.com/zharfanfw",
+    link: "https://github.com/ZharfanFw/kailku",
   },
   {
     numeral: "IV",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     tech: "Python • FastAPI • SimPy • Vue",
     period: "Sep 2025 – Nov 2025",
     slug: "smart-parking",
-    link: "https://github.com/zharfanfw",
+    link: "https://github.com/ZharfanFw/web-smartparkir",
   },
   {
     numeral: "III",
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     tech: "Java • Swing GUI • MySQL",
     period: "Sep 2025 – Oct 2025",
     slug: "riff-or-die",
-    link: "https://github.com/zharfanfw",
+    link: "https://github.com/ZharfanFw/riff-or-die",
   },
   {
     numeral: "II",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     tech: "PHP • MariaDB • Tailwind • Alpine",
     period: "Mar 2025 – May 2025",
     slug: "litterally",
-    link: "https://github.com/zharfanfw",
+    link: "https://github.com/blucordon/LitterAlly-Waste-Tracking-Website-",
   },
   {
     numeral: "I",
@@ -78,6 +78,6 @@ export const projects: Project[] = [
     tech: "C • Custom Tokenizer • File I/O",
     period: "Dec 2024 – Jan 2025",
     slug: "dbms-c",
-    link: "https://github.com/zharfanfw",
+    link: "https://github.com/ZharfanFw/dbms-c",
   },
 ];
