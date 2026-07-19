@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import { Oswald, Inter } from "next/font/google";
+import { Oswald, Inter, Geist } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -26,9 +29,9 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${oswald.variable} ${inter.variable} h-full antialiased`}
+      className={cn("h-full", "antialiased", oswald.variable, inter.variable, "font-sans", geist.variable)}
     >
-      <body className="min-h-full flex flex-col bg-navy-950 text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground">
         {children}
       </body>
     </html>

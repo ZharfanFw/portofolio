@@ -1,30 +1,182 @@
-@import "tailwindcss";
+/* Hallmark · macrostructure: Marquee Hero · H3 hero knobs: headline=condensed-bold, clock=animated-svg, text=left-aligned
+ * theme: custom · vibe: "Persona 3 Dark Hour" · paper: oklch(10% 0.04 245) · accent: oklch(60% 0.18 245)
+ * display: Oswald · body: Inter · axes: dark / display-condensed-bold / cool
+ * studied: no · context: user-provided · v1.1.0
+ */
 
-:root {
-  --background: #0a1428;
-  --foreground: #e8ecf2;
-}
+@import "../../tokens.css";
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Hallmark color variables in Tailwind */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
+  --color-paper: var(--color-paper);
+  --color-paper-2: var(--color-paper-2);
+  --color-paper-3: var(--color-paper-3);
+  --color-ink: var(--color-ink);
+  --color-ink-2: var(--color-ink-2);
+  --color-muted: var(--color-muted);
+  --color-neutral: var(--color-neutral);
+  --color-rule: var(--color-rule);
+  --color-rule-2: var(--color-rule-2);
+  --color-accent: var(--color-accent);
+  --color-accent-ink: var(--color-accent-ink);
+  --color-focus: var(--color-focus);
+
+  /* Legacy Navy colors for backward compatibility */
   --color-navy-950: #0a1428;
   --color-navy-900: #0d1b33;
   --color-navy-800: #142645;
-
   --color-accent-400: #2f7fe0;
   --color-accent-500: #1e5fb8;
   --color-accent-600: #185fa5;
-
   --color-silver-400: #8fa8c9;
 
-  --font-heading: var(--font-oswald);
-  --font-body: var(--font-inter);
+  /* Typography */
+  --font-heading: var(--font-display);
+  --font-body: var(--font-body);
+  --font-sans: var(--font-body);
+
+  /* Shadcn standard theme variables */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--color-accent-ink);
+  --color-muted-foreground: var(--color-muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-body), sans-serif;
+:root {
+  /* Shadcn variables mapped to our custom design tokens */
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+  
+  --card: var(--color-paper-3);
+  --card-foreground: var(--color-ink);
+  
+  --popover: var(--color-paper-2);
+  --popover-foreground: var(--color-ink);
+  
+  --primary: var(--color-accent);
+  --primary-foreground: var(--color-accent-ink);
+  
+  --secondary: var(--color-paper-2);
+  --secondary-foreground: var(--color-ink);
+  
+  --muted: var(--color-paper-2);
+  --muted-foreground: var(--color-muted);
+  
+  --accent: var(--color-paper-2);
+  --accent-foreground: var(--color-ink);
+  
+  --destructive: oklch(0.577 0.245 27.325);
+  
+  --border: var(--color-rule);
+  --input: var(--color-rule-2);
+  --ring: var(--color-focus);
+  
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  
+  --radius: 0.5rem;
+  
+  --sidebar: var(--color-paper-2);
+  --sidebar-foreground: var(--color-ink);
+  --sidebar-primary: var(--color-accent);
+  --sidebar-primary-foreground: var(--color-accent-ink);
+  --sidebar-accent: var(--color-paper-3);
+  --sidebar-accent-foreground: var(--color-ink);
+  --sidebar-border: var(--color-rule);
+  --sidebar-ring: var(--color-focus);
+}
+
+/* Force dark mode canvas values across the board */
+.dark {
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground relative overflow-x-hidden;
+    font-family: var(--font-body), sans-serif;
+  }
+  /* Atmospheric radial blooms background treatment */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    background: 
+      radial-gradient(circle at 15% 20%, oklch(22% 0.12 245 / 0.15) 0%, transparent 45%),
+      radial-gradient(circle at 85% 75%, oklch(20% 0.10 245 / 0.12) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  html {
+    @apply scroll-smooth h-full;
+    font-family: var(--font-body), sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), sans-serif;
+  }
+}
+
+/* Custom visual effects and microinteractions */
+.p3-glow {
+  text-shadow: 0 0 10px oklch(60% 0.18 245 / 0.5);
+}
+
+.p3-glow-border {
+  box-shadow: 0 0 15px oklch(60% 0.18 245 / 0.25);
+}
+
+/* Clock ticking animation */
+@keyframes tick {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hand-seconds {
+  animation: tick 60s steps(60) infinite;
+}
+
+.hand-minutes {
+  animation: tick 3600s linear infinite;
+}
+
+.hand-hours {
+  animation: tick 43200s linear infinite;
 }
