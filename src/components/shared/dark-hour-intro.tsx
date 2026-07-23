@@ -54,6 +54,7 @@ export function DarkHourIntro({ onComplete }: { onComplete: () => void }) {
         >
           {/* Background Radial Glow */}
           <motion.div
+            initial={{ scale: 1, opacity: 0.15 }}
             animate={{
               scale: isDarkHour ? [1, 1.4, 1.2] : [1, 1.1, 1],
               opacity: isDarkHour ? [0.3, 0.8, 0.4] : [0.15, 0.25, 0.15],
@@ -118,11 +119,13 @@ export function DarkHourIntro({ onComplete }: { onComplete: () => void }) {
                 <motion.path
                   d="M 65 65 Q 60 55 52 62 Q 48 68 56 70 Q 52 76 60 74 Q 63 70 65 65 Z"
                   fill="var(--color-accent)"
+                  initial={{ opacity: 0.2 }}
                   animate={{ opacity: isDarkHour ? 0.8 : 0.2 }}
                 />
                 <motion.path
                   d="M 135 135 Q 140 125 148 132 Q 152 138 144 140 Q 148 146 140 144 Q 137 140 135 135 Z"
                   fill="var(--color-accent)"
+                  initial={{ opacity: 0.25 }}
                   animate={{ opacity: isDarkHour ? 0.8 : 0.25 }}
                   transform="rotate(15, 135, 135)"
                 />
@@ -175,6 +178,7 @@ export function DarkHourIntro({ onComplete }: { onComplete: () => void }) {
               </motion.span>
 
               <motion.span
+                initial={{ opacity: 0.7 }}
                 animate={{ opacity: isDarkHour ? [0.6, 1, 0.6] : 0.7 }}
                 transition={{ duration: 0.8, repeat: Infinity }}
                 className="font-heading text-xs sm:text-sm uppercase tracking-widest text-accent font-semibold"
