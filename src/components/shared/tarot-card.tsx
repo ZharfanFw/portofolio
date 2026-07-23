@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 type TarotCardProps = {
   numeral: string;
@@ -25,7 +25,9 @@ export function TarotCard({
   const [flipped, setFlipped] = useState(false);
 
   return (
-    <div
+    <motion.div
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className="aspect-[2/3.2] cursor-pointer [perspective:1000px] group select-none"
       onClick={() => setFlipped((f) => !f)}
     >
@@ -104,6 +106,6 @@ export function TarotCard({
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

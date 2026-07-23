@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { DiagonalSection } from "@/components/shared/diagonal-section";
+import { MotionReveal, MotionStaggerContainer, MotionStaggerItem } from "@/components/shared/motion-reveal";
 
 interface SkillGroup {
   category: string;
@@ -26,17 +29,17 @@ export function Skills() {
     <DiagonalSection id="skills" bgClassName="bg-paper-2">
       <div className="flex flex-col gap-8 py-8">
         {/* Section Title */}
-        <div className="flex items-center gap-3">
+        <MotionReveal variant="fade-up" className="flex items-center gap-3">
           <div className="w-2 h-6 bg-accent" />
           <h2 className="font-heading text-3xl uppercase tracking-wider text-ink font-bold">
             Skills
           </h2>
-        </div>
+        </MotionReveal>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto w-full">
+        <MotionStaggerContainer staggerDelay={0.12} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto w-full">
           {skillGroups.map((group) => (
-            <div 
+            <MotionStaggerItem 
               key={group.category} 
               className="flex flex-col gap-4 p-6 bg-paper-3 border border-rule/50 rounded-lg hover:border-accent/40 transition-colors duration-300 shadow-sm"
             >
@@ -53,9 +56,9 @@ export function Skills() {
                   </span>
                 ))}
               </div>
-            </div>
+            </MotionStaggerItem>
           ))}
-        </div>
+        </MotionStaggerContainer>
       </div>
     </DiagonalSection>
   );

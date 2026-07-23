@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { DiagonalSection } from "@/components/shared/diagonal-section";
+import { MotionReveal, MotionStaggerContainer, MotionStaggerItem } from "@/components/shared/motion-reveal";
 
 interface EducationItem {
   institution: string;
@@ -31,7 +34,7 @@ export function Education() {
     <DiagonalSection id="education" bgClassName="bg-paper">
       <div className="flex flex-col md:flex-row gap-12 py-8">
         {/* Left Column: Heading */}
-        <div className="flex flex-col gap-4 md:w-1/3">
+        <MotionReveal variant="fade-right" className="flex flex-col gap-4 md:w-1/3">
           <div className="flex items-center gap-3">
             <div className="w-2 h-6 bg-accent" />
             <h2 className="font-heading text-3xl uppercase tracking-wider text-ink font-bold">
@@ -41,17 +44,17 @@ export function Education() {
           <p className="font-body text-sm text-ink-2 max-w-xs leading-relaxed">
             Formal education history laying the foundation for computer science and systems development.
           </p>
-        </div>
+        </MotionReveal>
 
         {/* Right Column: Timeline Cards */}
-        <div className="flex flex-col gap-6 md:w-2/3 relative pl-4 border-l border-rule">
+        <MotionStaggerContainer staggerDelay={0.15} className="flex flex-col gap-6 md:w-2/3 relative pl-4 border-l border-rule">
           {educationData.map((item, idx) => (
-            <div
+            <MotionStaggerItem
               key={idx}
               className="bg-paper-2 border border-rule/50 hover:border-accent/40 rounded-lg p-6 relative transition-all duration-300 shadow-sm flex flex-col gap-3 group"
             >
               {/* Timeline dot */}
-              <div className="absolute -left-[21px] top-7 w-2.5 h-2.5 rounded-full bg-paper border-2 border-accent transition-transform duration-300 group-hover:scale-125" />
+              <div className="absolute -left-[21px] top-7 w-2.5 h-2.5 rounded-full bg-paper border-2 border-accent transition-transform duration-300 group-hover:scale-125 p3-glow" />
 
               {/* Card Header */}
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
@@ -86,9 +89,9 @@ export function Education() {
                   ))}
                 </ul>
               )}
-            </div>
+            </MotionStaggerItem>
           ))}
-        </div>
+        </MotionStaggerContainer>
       </div>
     </DiagonalSection>
   );

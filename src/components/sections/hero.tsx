@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 import { DiagonalSection } from "@/components/shared/diagonal-section";
 
 export function Hero() {
@@ -7,20 +10,42 @@ export function Hero() {
       <div className="flex min-h-[90vh] flex-col md:flex-row items-center justify-between gap-12 pt-20 pb-12">
         {/* Left Side: Headline and Subtext */}
         <div className="flex flex-col gap-6 max-w-xl text-left">
-          <span className="text-xs uppercase tracking-widest text-accent font-semibold p3-glow">
+          <motion.span
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-xs uppercase tracking-widest text-accent font-semibold p3-glow"
+          >
             Dark Hour Developer
-          </span>
-          <h1 className="font-heading text-6xl md:text-8xl font-bold uppercase tracking-tight leading-none text-ink">
+          </motion.span>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="font-heading text-6xl md:text-8xl font-bold uppercase tracking-tight leading-none text-ink"
+          >
             ZHARFAN
-          </h1>
-          <p className="font-body text-base md:text-lg text-ink-2 max-w-md leading-relaxed">
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="font-body text-base md:text-lg text-ink-2 max-w-md leading-relaxed"
+          >
             Crafting high-performance backend systems with Elysia and PostgreSQL, 
             backed by clean frontend integrations in Next.js.
-          </p>
+          </motion.p>
         </div>
 
         {/* Right Side: Tier A CSS Art - The Clock of the Dark Hour */}
-        <div className="relative flex items-center justify-center w-72 h-72 md:w-96 md:h-96">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          className="relative flex items-center justify-center w-72 h-72 md:w-96 md:h-96"
+        >
           {/* Clock Outer Glow and Radial Aura */}
           <div className="absolute inset-0 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
           
@@ -138,7 +163,7 @@ export function Hero() {
 
           {/* Glowing Ring around the Clock */}
           <div className="absolute inset-4 rounded-full border border-accent/10 pointer-events-none p3-glow-border" />
-        </div>
+        </motion.div>
       </div>
     </DiagonalSection>
   );

@@ -1,20 +1,23 @@
+"use client";
+
 import React from "react";
 import { DiagonalSection } from "@/components/shared/diagonal-section";
+import { MotionReveal } from "@/components/shared/motion-reveal";
 
 export function Contact() {
   return (
     <DiagonalSection id="contact" cutBottom={false} bgClassName="bg-paper">
       <div className="flex flex-col gap-8 py-8">
         {/* Section Title */}
-        <div className="flex items-center gap-3">
+        <MotionReveal variant="fade-up" className="flex items-center gap-3">
           <div className="w-2 h-6 bg-accent" />
           <h2 className="font-heading text-3xl uppercase tracking-wider text-ink font-bold">
             Contact
           </h2>
-        </div>
+        </MotionReveal>
 
         {/* Terminal Prompt Mockup */}
-        <div className="max-w-2xl mx-auto w-full border border-rule/50 bg-paper-3 rounded-lg overflow-hidden shadow-lg p3-glow-border">
+        <MotionReveal variant="scale-up" delay={0.15} className="max-w-2xl mx-auto w-full border border-rule/50 bg-paper-3 rounded-lg overflow-hidden shadow-lg p3-glow-border">
           {/* Window Header */}
           <div className="flex items-center justify-between px-4 py-2 border-b border-rule bg-paper-2">
             <div className="flex gap-1.5">
@@ -74,7 +77,7 @@ export function Contact() {
             </div>
             <div className="animate-pulse w-2 h-4 bg-accent mt-2" />
           </div>
-        </div>
+        </MotionReveal>
       </div>
     </DiagonalSection>
   );

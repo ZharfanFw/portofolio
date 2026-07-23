@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { DiagonalSection } from "@/components/shared/diagonal-section";
 import { TarotCard } from "@/components/shared/tarot-card";
 import { projects } from "@/data/projects";
+import { MotionReveal } from "@/components/shared/motion-reveal";
 
 export function Projects() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -46,15 +47,15 @@ export function Projects() {
     <DiagonalSection id="projects" bgClassName="bg-paper">
       <div className="flex flex-col gap-8 py-8 w-full">
         {/* Section Title */}
-        <div className="flex items-center gap-3">
+        <MotionReveal variant="fade-up" className="flex items-center gap-3">
           <div className="w-2 h-6 bg-accent" />
           <h2 className="font-heading text-3xl uppercase tracking-wider text-ink font-bold">
             Projects
           </h2>
-        </div>
+        </MotionReveal>
 
         {/* Unified Responsive Carousel */}
-        <div className="w-full max-w-6xl mx-auto px-1 sm:px-4">
+        <MotionReveal variant="fade-up" delay={0.15} className="w-full max-w-6xl mx-auto px-1 sm:px-4">
           <div className="relative overflow-hidden w-full py-4">
             <div 
               className="flex transition-transform duration-500 ease-out"
@@ -116,7 +117,7 @@ export function Projects() {
               </svg>
             </button>
           </div>
-        </div>
+        </MotionReveal>
       </div>
     </DiagonalSection>
   );

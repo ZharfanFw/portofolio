@@ -1,3 +1,4 @@
+import { ScrollProgress } from "@/components/shared/scroll-progress";
 import { NavPill } from "@/components/shared/nav-pill";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
@@ -11,6 +12,7 @@ import { Footer } from "@/components/shared/footer";
 export default function Home() {
   return (
     <>
+      <ScrollProgress />
       <NavPill />
       <main className="flex-1 w-full relative z-10">
         <Hero />
