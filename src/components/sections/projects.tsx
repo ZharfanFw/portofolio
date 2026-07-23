@@ -5,6 +5,7 @@ import { DiagonalSection } from "@/components/shared/diagonal-section";
 import { TarotCard } from "@/components/shared/tarot-card";
 import { projects } from "@/data/projects";
 import { MotionReveal } from "@/components/shared/motion-reveal";
+import { SectionHeader } from "@/components/shared/section-header";
 
 export function Projects() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -46,13 +47,12 @@ export function Projects() {
   return (
     <DiagonalSection id="projects" bgClassName="bg-paper">
       <div className="flex flex-col gap-8 py-8 w-full">
-        {/* Section Title */}
-        <MotionReveal variant="fade-up" className="flex items-center gap-3">
-          <div className="w-2 h-6 bg-accent" />
-          <h2 className="font-heading text-3xl uppercase tracking-wider text-ink font-bold">
-            Projects
-          </h2>
-        </MotionReveal>
+        {/* Slanted P3 Section Header */}
+        <SectionHeader 
+          number="04" 
+          title="PROJECTS" 
+          subtitle="FEATURED SYSTEMS & ARCHITECTURE ARCHIVES" 
+        />
 
         {/* Unified Responsive Carousel */}
         <MotionReveal variant="fade-up" delay={0.15} className="w-full max-w-6xl mx-auto px-1 sm:px-4">

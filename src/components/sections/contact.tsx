@@ -3,18 +3,18 @@
 import React from "react";
 import { DiagonalSection } from "@/components/shared/diagonal-section";
 import { MotionReveal } from "@/components/shared/motion-reveal";
+import { SectionHeader } from "@/components/shared/section-header";
 
 export function Contact() {
   return (
     <DiagonalSection id="contact" cutBottom={false} bgClassName="bg-paper">
-      <div className="flex flex-col gap-8 py-8">
-        {/* Section Title */}
-        <MotionReveal variant="fade-up" className="flex items-center gap-3">
-          <div className="w-2 h-6 bg-accent" />
-          <h2 className="font-heading text-3xl uppercase tracking-wider text-ink font-bold">
-            Contact
-          </h2>
-        </MotionReveal>
+      <div className="flex flex-col gap-6 py-4 w-full">
+        {/* Slanted P3 Section Header */}
+        <SectionHeader 
+          number="06" 
+          title="CONTACT" 
+          subtitle="COMMUNICATION & DIRECT INQUIRIES" 
+        />
 
         {/* Terminal Prompt Mockup */}
         <MotionReveal variant="scale-up" delay={0.15} className="max-w-2xl mx-auto w-full border border-rule/50 bg-paper-3 rounded-lg overflow-hidden shadow-lg p3-glow-border">

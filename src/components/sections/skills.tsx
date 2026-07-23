@@ -3,6 +3,7 @@
 import React from "react";
 import { DiagonalSection } from "@/components/shared/diagonal-section";
 import { MotionReveal, MotionStaggerContainer, MotionStaggerItem } from "@/components/shared/motion-reveal";
+import { SectionHeader } from "@/components/shared/section-header";
 
 interface SkillGroup {
   category: string;
@@ -26,15 +27,14 @@ const skillGroups: SkillGroup[] = [
 
 export function Skills() {
   return (
-    <DiagonalSection id="skills" bgClassName="bg-paper-2">
-      <div className="flex flex-col gap-8 py-8">
-        {/* Section Title */}
-        <MotionReveal variant="fade-up" className="flex items-center gap-3">
-          <div className="w-2 h-6 bg-accent" />
-          <h2 className="font-heading text-3xl uppercase tracking-wider text-ink font-bold">
-            Skills
-          </h2>
-        </MotionReveal>
+    <DiagonalSection id="skills" bgClassName="bg-paper-2" direction="right">
+      <div className="flex flex-col gap-6 py-4 w-full">
+        {/* Slanted P3 Section Header */}
+        <SectionHeader 
+          number="05" 
+          title="SKILLS" 
+          subtitle="TECHNICAL STACK & INFRASTRUCTURE CAPABILITIES" 
+        />
 
         {/* Categories Grid */}
         <MotionStaggerContainer staggerDelay={0.12} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto w-full">

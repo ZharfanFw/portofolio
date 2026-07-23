@@ -25,7 +25,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="font-heading text-6xl md:text-8xl font-bold uppercase tracking-tight leading-none text-ink"
           >
-            ZHARFAN
+            ZHARFAN FAZA WIBAWA
           </motion.h1>
 
           <motion.p
@@ -34,7 +34,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="font-body text-base md:text-lg text-ink-2 max-w-md leading-relaxed"
           >
-            Crafting high-performance backend systems with Elysia and PostgreSQL, 
+            Crafting high-performance backend systems with Elysia and PostgreSQL,
             backed by clean frontend integrations in Next.js.
           </motion.p>
         </div>
@@ -48,7 +48,7 @@ export function Hero() {
         >
           {/* Clock Outer Glow and Radial Aura */}
           <div className="absolute inset-0 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
-          
+
           {/* SVG Clock Frame */}
           <svg
             viewBox="0 0 200 200"
@@ -64,7 +64,7 @@ export function Hero() {
               strokeWidth="2.5"
               className="p3-glow-border opacity-95"
             />
-            
+
             {/* Inner Ring */}
             <circle
               cx="100"
@@ -75,7 +75,7 @@ export function Hero() {
               strokeWidth="1"
               strokeDasharray="4,4"
             />
-            
+
             {/* Hour Markers (XII, III, VI, IX) */}
             <text x="100" y="32" textAnchor="middle" className="font-heading text-sm font-bold fill-ink select-none tracking-tighter">XII</text>
             <text x="174" y="105" textAnchor="middle" className="font-heading text-sm font-bold fill-ink select-none">III</text>
@@ -129,7 +129,7 @@ export function Hero() {
                 className="hand-hours"
                 style={{ transformOrigin: "0 0" }}
               />
-              
+
               {/* Minute Hand */}
               <line
                 x1="0"
@@ -142,7 +142,7 @@ export function Hero() {
                 className="hand-minutes"
                 style={{ transformOrigin: "0 0" }}
               />
-              
+
               {/* Second Hand (Electric Blue Accent) */}
               <line
                 x1="0"
@@ -155,7 +155,7 @@ export function Hero() {
                 className="hand-seconds"
                 style={{ transformOrigin: "0 0" }}
               />
-              
+
               {/* Center Pin */}
               <circle cx="0" cy="0" r="4.5" fill="var(--color-paper)" stroke="var(--color-accent)" strokeWidth="2" />
             </g>
