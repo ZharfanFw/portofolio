@@ -29,11 +29,11 @@ const architecturalFeatures: ArchitecturalFeature[] = [
     impact: "Instant plug-and-play receipt printing from any browser or tablet with sub-100ms print dispatch."
   },
   {
-    title: "Bun + Elysia Low Latency API",
-    badge: "Runtime & High-Throughput",
-    problem: "Standard Node.js + Express setups exhibit notable cold-start latency and higher memory footprints on resource-constrained deployment tiers.",
-    solution: "Leveraged Bun's native V8 bindings and Elysia's compile-time schema validation (TypeBox) with clean route modularity and JWT authentication.",
-    impact: "Blazing fast transaction turnaround (<15ms response latency) ensuring cashier queues move without stutter."
+    title: "Runtime Adaptability: Elysia to Hono Migration",
+    badge: "Runtime & Infrastructure",
+    problem: "Initially developed with Elysia on Bun, the on-premise home server environment had hardware CPU architecture constraints that prevented Bun from running reliably.",
+    solution: "Refactored routing to Hono's universal web standard API. Enabled seamless execution on standard Node.js & Docker environments while keeping lightweight overhead and TypeBox/Zod validations.",
+    impact: "Hardware-agnostic deployment across home server CPUs with <20ms response time and rock-solid service stability."
   }
 ];
 
@@ -71,8 +71,8 @@ export function CaseStudy() {
               <span className="text-accent font-bold">Modular Monolith</span>
             </div>
             <div className="flex items-center justify-between gap-4 text-xs font-mono">
-              <span className="text-muted">API Latency:</span>
-              <span className="text-ink font-bold">&lt; 15ms (Elysia)</span>
+              <span className="text-muted">Framework Runtime:</span>
+              <span className="text-ink font-bold">Hono (Web Standards)</span>
             </div>
             <div className="flex items-center justify-between gap-4 text-xs font-mono">
               <span className="text-muted">Database Engine:</span>
@@ -129,9 +129,9 @@ export function CaseStudy() {
 
                 <div className="flex flex-col p-4 rounded-lg bg-paper-2 border border-rule/70 relative group hover:border-accent transition-colors">
                   <span className="font-mono text-xs text-accent font-bold">02. REST Gateway</span>
-                  <h4 className="font-heading text-lg font-bold text-ink uppercase mt-1">Elysia / Bun Server</h4>
+                  <h4 className="font-heading text-lg font-bold text-ink uppercase mt-1">Hono / Node.js Server</h4>
                   <p className="font-body text-xs text-ink-2 mt-2 leading-relaxed">
-                    Compile-time TypeBox schema validation, role-based JWT auth guards, and transactional handlers.
+                    Standards-based web fetch API routing, role-based JWT auth guards, and CPU-agnostic home server stability.
                   </p>
                 </div>
 
@@ -189,9 +189,9 @@ export const orderItems = pgTable("order_items", {
           {activeTab === "stack" && (
             <div className="bg-paper-3 border border-rule/70 rounded-xl p-6 shadow-md grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
               <div className="flex flex-col gap-2 p-3 bg-paper-2 rounded-lg border border-rule/60">
-                <span className="text-accent font-bold uppercase tracking-wider">Backend Runtime</span>
-                <span className="text-ink font-semibold">Bun + Elysia.js</span>
-                <p className="text-muted font-sans text-xs">Chosen for extreme execution speed, native TypeScript execution, and modern fetch standards.</p>
+                <span className="text-accent font-bold uppercase tracking-wider">Backend Framework</span>
+                <span className="text-ink font-semibold">Hono (migrated from Elysia)</span>
+                <p className="text-muted font-sans text-xs">Ultra-lightweight web standards framework chosen for universal runtime portability across home server CPUs.</p>
               </div>
               <div className="flex flex-col gap-2 p-3 bg-paper-2 rounded-lg border border-rule/60">
                 <span className="text-accent font-bold uppercase tracking-wider">Database & ORM</span>

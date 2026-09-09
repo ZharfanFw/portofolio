@@ -17,7 +17,7 @@ const skillGroups: SkillGroup[] = [
   },
   {
     category: "Backend Dev",
-    items: ["Elysia", "Drizzle ORM", "Node.js", "REST APIs"],
+    items: ["Hono", "Elysia", "Drizzle ORM", "Node.js", "REST APIs"],
   },
   {
     category: "Infrastructure",

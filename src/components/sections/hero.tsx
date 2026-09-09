@@ -34,7 +34,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="font-body text-base sm:text-lg text-ink-2 max-w-lg leading-relaxed font-normal"
           >
-            Crafting high-performance backend systems with Elysia and PostgreSQL,
+            Crafting lightweight, high-performance backend systems with Hono, Elysia, and PostgreSQL,
             backed by clean frontend integrations in Next.js.
           </motion.p>
 
@@ -58,8 +58,8 @@ export function Hero() {
               <span className="font-mono text-[11px] text-muted uppercase tracking-wider mt-1">Arcana Systems</span>
             </div>
             <div className="flex flex-col p-2.5 rounded-lg bg-paper-2/80 border border-rule/70">
-              <span className="font-heading text-lg sm:text-xl font-bold text-ink leading-none">Bun / Go / C</span>
-              <span className="font-mono text-[11px] text-muted uppercase tracking-wider mt-1">High-Throughput</span>
+              <span className="font-heading text-lg sm:text-xl font-bold text-ink leading-none">Hono / Go / C</span>
+              <span className="font-mono text-[11px] text-muted uppercase tracking-wider mt-1">Cross-Platform</span>
             </div>
           </motion.div>
 
