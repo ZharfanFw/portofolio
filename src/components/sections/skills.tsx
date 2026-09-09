@@ -41,16 +41,16 @@ export function Skills() {
           {skillGroups.map((group) => (
             <MotionStaggerItem 
               key={group.category} 
-              className="flex flex-col gap-4 p-6 bg-paper-3 border border-rule/50 rounded-lg hover:border-accent/40 transition-colors duration-300 shadow-sm"
+              className="flex flex-col gap-4 p-6 bg-paper-3 border border-rule/70 rounded-xl hover:border-accent/60 transition-all duration-300 shadow-md"
             >
-              <h3 className="font-body text-xs tracking-widest text-accent uppercase font-bold">
+              <h3 className="font-heading text-sm tracking-wider text-accent uppercase font-bold border-b border-rule/50 pb-2">
                 {group.category}
               </h3>
               <div className="flex flex-wrap gap-2.5">
                 {group.items.map((s) => (
                   <span
                     key={s}
-                    className="font-body text-xs font-medium rounded-md border border-rule bg-paper-2 px-3 py-1.5 text-ink-2 hover:text-ink hover:border-accent transition-all duration-200 select-none"
+                    className="font-body text-xs sm:text-sm font-medium rounded-lg border border-rule/70 bg-paper-2 px-3 py-1.5 text-ink-2 hover:text-ink hover:border-accent hover:bg-paper-3 transition-all duration-200 select-none"
                   >
                     {s}
                   </span>

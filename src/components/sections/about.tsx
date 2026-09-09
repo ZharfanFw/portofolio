@@ -70,11 +70,11 @@ export function About() {
 
           {/* Middle Column: Professional Bio */}
           <MotionReveal variant="fade-up" delay={0.2} className="flex flex-col gap-5 max-w-xl w-full">
-            <p className="font-body text-base text-ink-2 leading-relaxed">
+            <p className="font-body text-base sm:text-lg text-ink-2 leading-relaxed">
               I am a software engineer focused on building robust, high-performance backend systems and APIs.
               While I handle web frontend basics using modern frameworks like Next.js, my primary expertise lies in database performance, reliable routing, and service design.
             </p>
-            <p className="font-body text-base text-ink-2 leading-relaxed">
+            <p className="font-body text-base sm:text-lg text-ink-2 leading-relaxed">
               My engineering philosophy centers around simplicity, architectural clarity, and precise execution.
               Whether optimizing PostgreSQL queries, writing server controllers, or containerizing microservices with Docker, I approach system design with a rigorous and methodical mindset.
             </p>
@@ -84,23 +84,23 @@ export function About() {
           <MotionReveal 
             variant="fade-left" 
             delay={0.3}
-            className="w-full lg:w-72 bg-paper-3 border border-rule/60 p-5 rounded-lg shadow-lg flex flex-col gap-4 p3-glow-border"
+            className="w-full lg:w-80 bg-paper-3 border border-rule/70 p-6 rounded-xl shadow-lg flex flex-col gap-5 p3-glow-border"
           >
-            <div className="flex items-center justify-between border-b border-rule pb-2">
-              <span className="font-mono text-xs font-bold uppercase tracking-wider text-accent">
+            <div className="flex items-center justify-between border-b border-rule pb-3">
+              <span className="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-accent">
                 Status Parameters
               </span>
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              <span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" />
             </div>
 
             <div className="flex flex-col gap-4">
               {statusParameters.map((param) => (
                 <div key={param.name} className="flex flex-col gap-1.5">
-                  <div className="flex items-center justify-between text-xs font-mono">
+                  <div className="flex items-center justify-between text-xs sm:text-sm font-mono">
                     <span className="font-bold uppercase text-ink tracking-wide">{param.name}</span>
                     <span className="text-accent font-semibold">{param.rankName}</span>
                   </div>
-                  <div className="text-[10px] font-mono text-ink-2 mb-1">{param.description}</div>
+                  <div className="text-xs font-mono text-muted mb-1">{param.description}</div>
                   {/* Parameter Level Blocks with Shimmer Pulse */}
                   <div className="flex gap-1.5">
                     {Array.from({ length: param.maxLevel }).map((_, idx) => {
@@ -108,10 +108,10 @@ export function About() {
                       return (
                         <div
                           key={idx}
-                          className={`h-2.5 flex-1 rounded-sm transition-all duration-300 ${
+                          className={`h-3 flex-1 rounded-sm transition-all duration-300 ${
                             isActive
                               ? "bg-accent shadow-[0_0_8px_rgba(47,127,224,0.6)] animate-pulse"
-                              : "bg-paper-2 border border-rule/40 opacity-40"
+                              : "bg-paper-2 border border-rule/50 opacity-40"
                           }`}
                         />
                       );

@@ -23,7 +23,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-heading text-6xl md:text-8xl font-bold uppercase tracking-tight leading-none text-ink"
+            className="font-heading text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tight leading-[0.95] text-ink"
           >
             ZHARFAN FAZA WIBAWA
           </motion.h1>
@@ -32,7 +32,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="font-body text-base md:text-lg text-ink-2 max-w-md leading-relaxed"
+            className="font-body text-base sm:text-lg text-ink-2 max-w-lg leading-relaxed font-normal"
           >
             Crafting high-performance backend systems with Elysia and PostgreSQL,
             backed by clean frontend integrations in Next.js.

@@ -56,10 +56,10 @@ export function NavPill() {
               key={item.href}
               href={item.href}
               className={cn(
-                "px-4 py-1.5 text-xs uppercase tracking-wider rounded-full transition-all duration-200",
+                "px-4 py-1.5 text-xs uppercase tracking-wider rounded-full transition-all duration-200 font-medium",
                 isActive
-                  ? "bg-accent text-accent-ink font-medium p3-glow-border"
-                  : "text-ink-2 hover:text-ink hover:bg-paper-3/40"
+                  ? "bg-accent text-accent-ink font-semibold p3-glow-border"
+                  : "text-ink-2 hover:text-ink hover:bg-paper-3/60"
               )}
             >
               {item.label}

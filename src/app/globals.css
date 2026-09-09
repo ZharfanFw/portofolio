@@ -42,6 +42,7 @@
   --font-heading: var(--font-display);
   --font-body: var(--font-body);
   --font-sans: var(--font-body);
+  --font-mono: var(--font-code);
 
   /* Shadcn standard theme variables */
   --color-sidebar-ring: var(--sidebar-ring);
@@ -132,7 +133,11 @@
   }
   body {
     @apply bg-background text-foreground relative overflow-x-hidden;
-    font-family: var(--font-body), sans-serif;
+    font-family: var(--font-body), system-ui, sans-serif;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   /* Atmospheric radial blooms background treatment */
   body::before {
@@ -141,26 +146,30 @@
     inset: 0;
     z-index: -10;
     background: 
-      radial-gradient(circle at 15% 20%, oklch(22% 0.12 245 / 0.15) 0%, transparent 45%),
-      radial-gradient(circle at 85% 75%, oklch(20% 0.10 245 / 0.12) 0%, transparent 50%);
+      radial-gradient(circle at 15% 20%, oklch(22% 0.12 245 / 0.18) 0%, transparent 45%),
+      radial-gradient(circle at 85% 75%, oklch(20% 0.10 245 / 0.14) 0%, transparent 50%);
     pointer-events: none;
   }
   html {
     @apply scroll-smooth h-full;
-    font-family: var(--font-body), sans-serif;
+    font-family: var(--font-body), system-ui, sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading), sans-serif;
+    letter-spacing: 0.02em;
+  }
+  code, pre, kbd {
+    font-family: var(--font-mono), monospace;
   }
 }
 
 /* Custom visual effects and microinteractions */
 .p3-glow {
-  text-shadow: 0 0 10px oklch(60% 0.18 245 / 0.5);
+  text-shadow: 0 0 12px oklch(64% 0.20 245 / 0.6);
 }
 
 .p3-glow-border {
-  box-shadow: 0 0 15px oklch(60% 0.18 245 / 0.25);
+  box-shadow: 0 0 16px oklch(64% 0.20 245 / 0.28);
 }
 
 /* Clock ticking animation */

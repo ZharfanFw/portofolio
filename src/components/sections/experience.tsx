@@ -50,41 +50,48 @@ export function Experience() {
           </MotionReveal>
 
           {/* Right Column: Timeline Cards */}
-          <MotionStaggerContainer staggerDelay={0.15} className="flex flex-col gap-6 md:w-2/3 relative pl-4 border-l border-rule">
+          <MotionStaggerContainer staggerDelay={0.15} className="flex flex-col gap-6 md:w-2/3 relative pl-6 border-l-2 border-rule">
             {experienceData.map((item, idx) => (
               <MotionStaggerItem
                 key={idx}
-                className="bg-paper-3 border border-rule/50 hover:border-accent/40 rounded-lg p-6 relative transition-all duration-300 shadow-sm flex flex-col gap-3 group"
+                className="bg-paper-3 border border-rule/70 hover:border-accent/60 rounded-xl p-6 relative transition-all duration-300 shadow-md flex flex-col gap-4 group"
               >
                 {/* Timeline dot */}
-                <div className="absolute -left-[21px] top-7 w-2.5 h-2.5 rounded-full bg-paper border-2 border-accent transition-transform duration-300 group-hover:scale-125 p3-glow" />
+                <div className="absolute -left-[31px] top-7 w-3 h-3 rounded-full bg-paper border-2 border-accent transition-transform duration-300 group-hover:scale-125 p3-glow" />
 
                 {/* Card Header */}
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 border-b border-rule/50 pb-3">
                   <div>
-                    <h3 className="font-heading text-lg font-bold text-ink uppercase tracking-wide">
+                    <h3 className="font-heading text-xl font-bold text-ink uppercase tracking-wide">
                       {item.role}
                     </h3>
-                    <span className="font-heading text-xs font-semibold text-accent uppercase tracking-widest">
+                    <span className="font-mono text-xs sm:text-sm font-semibold text-accent uppercase tracking-wider">
                       {item.company}
                     </span>
                   </div>
-                  <span className="font-body text-xs text-muted font-medium whitespace-nowrap">
+                  <span className="font-mono text-xs text-muted font-medium whitespace-nowrap bg-paper-2 px-2.5 py-1 rounded-md border border-rule/50">
                     {item.period}
                   </span>
                 </div>
 
                 {/* Card Body */}
-                <p className="font-body text-xs text-ink-2 leading-relaxed">
+                <p className="font-body text-sm sm:text-base text-ink-2 leading-relaxed">
                   {item.description}
                 </p>
 
                 {item.highlights && item.highlights.length > 0 && (
-                  <ul className="flex flex-col gap-1.5 mt-2 pl-4 list-disc text-[11px] text-muted leading-relaxed font-body">
-                    {item.highlights.map((h, i) => (
-                      <li key={i}>{h}</li>
-                    ))}
-                  </ul>
+                  <div className="flex flex-col gap-2 mt-2 pt-3 border-t border-rule/40">
+                    <span className="font-mono text-xs font-bold text-accent uppercase tracking-wider">
+                      Key Highlights & Architecture:
+                    </span>
+                    <ul className="flex flex-col gap-2 pl-4 list-disc text-xs sm:text-sm text-ink-2/90 leading-relaxed font-body">
+                      {item.highlights.map((h, i) => (
+                        <li key={i} className="pl-1">
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
               </MotionStaggerItem>
             ))}

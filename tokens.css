@@ -1,23 +1,24 @@
 /* Hallmark · tokens · custom · vibe: "Persona 3 Dark Hour" */
 
 :root {
-  /* Colors */
-  --color-paper: oklch(10% 0.04 245);       /* Deep Navy background */
-  --color-paper-2: oklch(14% 0.04 245);     /* Elevated Navy background */
-  --color-paper-3: oklch(18% 0.04 245);     /* Card Navy background */
-  --color-ink: oklch(94% 0.015 245);        /* High contrast silver-blue primary text */
-  --color-ink-2: oklch(82% 0.02 245);       /* Silver-blue secondary text */
-  --color-muted: oklch(70% 0.03 245);       /* Muted text */
-  --color-neutral: oklch(58% 0.02 245);     /* Medium neutral */
-  --color-rule: oklch(26% 0.02 245);        /* Navy-grey borders/rules */
-  --color-rule-2: oklch(20% 0.02 245);      /* Muted borders/rules */
-  --color-accent: oklch(60% 0.18 245);      /* Electric blue accent */
-  --color-accent-ink: oklch(10% 0.04 245);  /* Text on solid accent backgrounds */
-  --color-focus: oklch(70% 0.22 245);       /* Highly visible focus ring color */
+  /* Colors - Persona 3 Dark Hour with Enhanced Readability */
+  --color-paper: oklch(11% 0.035 245);       /* Deep Navy background */
+  --color-paper-2: oklch(15% 0.04 245);     /* Elevated Navy background */
+  --color-paper-3: oklch(19% 0.045 245);    /* Card Navy background */
+  --color-ink: oklch(98% 0.01 245);         /* Crisp high contrast silver-white primary text */
+  --color-ink-2: oklch(88% 0.02 245);       /* Silver-blue secondary text (easy to read) */
+  --color-muted: oklch(74% 0.03 245);       /* Muted text with clear WCAG contrast */
+  --color-neutral: oklch(62% 0.02 245);     /* Medium neutral */
+  --color-rule: oklch(28% 0.03 245);        /* Navy-grey borders/rules */
+  --color-rule-2: oklch(22% 0.03 245);      /* Muted borders/rules */
+  --color-accent: oklch(64% 0.20 245);      /* Electric blue accent (more radiant & readable) */
+  --color-accent-ink: oklch(98% 0.01 245);  /* Text on solid accent backgrounds (crisp white) */
+  --color-focus: oklch(72% 0.22 245);       /* Highly visible focus ring color */
 
   /* Typography */
   --font-display: var(--font-oswald), sans-serif;
   --font-body: var(--font-inter), sans-serif;
+  --font-code: var(--font-mono), monospace;
 
   /* Spacing (4px grid base) */
   --space-3xs: 0.25rem;  /* 4px */
