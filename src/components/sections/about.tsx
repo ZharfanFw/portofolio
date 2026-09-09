@@ -84,7 +84,7 @@ export function About() {
           <MotionReveal 
             variant="fade-left" 
             delay={0.3}
-            className="w-full lg:w-80 bg-paper-3 border border-rule/70 p-6 rounded-xl shadow-lg flex flex-col gap-5 p3-glow-border"
+            className="w-full lg:w-88 bg-paper-3 border border-rule/70 p-6 rounded-xl shadow-lg flex flex-col gap-5 p3-glow-border shrink-0"
           >
             <div className="flex items-center justify-between border-b border-rule pb-3">
               <span className="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-accent">
@@ -96,9 +96,14 @@ export function About() {
             <div className="flex flex-col gap-4">
               {statusParameters.map((param) => (
                 <div key={param.name} className="flex flex-col gap-1.5">
-                  <div className="flex items-center justify-between text-xs sm:text-sm font-mono">
-                    <span className="font-bold uppercase text-ink tracking-wide">{param.name}</span>
-                    <span className="text-accent font-semibold">{param.rankName}</span>
+                  {/* Skill Title & Rank Name with proper spacing and wrap protection */}
+                  <div className="flex items-center justify-between gap-3 text-xs sm:text-sm font-mono">
+                    <span className="font-bold uppercase text-ink tracking-wide whitespace-nowrap">
+                      {param.name}
+                    </span>
+                    <span className="text-accent font-semibold whitespace-nowrap text-right">
+                      {param.rankName}
+                    </span>
                   </div>
                   <div className="text-xs font-mono text-muted mb-1">{param.description}</div>
                   {/* Parameter Level Blocks with Shimmer Pulse */}

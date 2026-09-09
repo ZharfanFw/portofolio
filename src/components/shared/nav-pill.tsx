@@ -25,16 +25,18 @@ export function NavPill() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100;
+      // Offset calculation that accounts for viewport center/reading line
+      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
 
-      // Find the current active section
-      for (const item of navItems) {
+      // Find the current active section by checking distance from scrollPosition
+      for (let i = navItems.length - 1; i >= 0; i--) {
+        const item = navItems[i];
         const el = document.querySelector(item.href);
         if (el) {
-          const top = (el as HTMLElement).offsetTop;
-          const height = (el as HTMLElement).offsetHeight;
+          const rect = el.getBoundingClientRect();
+          const top = rect.top + window.scrollY;
 
-          if (scrollPosition >= top && scrollPosition < top + height) {
+          if (scrollPosition >= top - 80) {
             setActiveSection(item.href);
             break;
           }
@@ -42,14 +44,15 @@ export function NavPill() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center">
+    <nav className="fixed top-5 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center w-full px-4 max-w-fit">
       {/* Desktop Menu (>= 768px) */}
-      <div className="hidden md:flex items-center gap-1 p-1 bg-paper-2/70 backdrop-blur-md border border-rule/50 rounded-full shadow-lg transition-all duration-300">
+      <div className="hidden lg:flex items-center gap-1 p-1.5 bg-paper-2/80 backdrop-blur-md border border-rule/70 rounded-full shadow-xl transition-all duration-300">
         {navItems.map((item) => {
           const isActive = activeSection === item.href;
           return (
@@ -57,9 +60,30 @@ export function NavPill() {
               key={item.href}
               href={item.href}
               className={cn(
-                "px-4 py-1.5 text-xs uppercase tracking-wider rounded-full transition-all duration-200 font-medium",
+                "px-3.5 py-1.5 text-[11px] uppercase tracking-wider rounded-full transition-all duration-200 font-medium whitespace-nowrap",
                 isActive
                   ? "bg-accent text-accent-ink font-semibold p3-glow-border"
+                  : "text-ink-2 hover:text-ink hover:bg-paper-3/60"
+              )}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </div>
+
+      {/* Medium screens (md to lg) compact version */}
+      <div className="hidden md:flex lg:hidden items-center gap-1 p-1 bg-paper-2/80 backdrop-blur-md border border-rule/70 rounded-full shadow-xl">
+        {navItems.map((item) => {
+          const isActive = activeSection === item.href;
+          return (
+            <a
+              key={item.href}
+              href={item.href}
+              className={cn(
+                "px-2.5 py-1 text-[10px] uppercase tracking-wider rounded-full transition-all duration-200 font-medium whitespace-nowrap",
+                isActive
+                  ? "bg-accent text-accent-ink font-semibold"
                   : "text-ink-2 hover:text-ink hover:bg-paper-3/60"
               )}
             >
@@ -74,7 +98,7 @@ export function NavPill() {
         {/* Trigger Button */}
         <button
           onClick={() => setIsOpen((prev) => !prev)}
-          className="flex items-center gap-2 px-5 py-2.5 bg-paper-2/90 backdrop-blur-md border border-rule/50 rounded-full shadow-lg text-xs uppercase tracking-widest text-ink font-medium hover:border-accent/40 active:scale-95 transition-all z-50"
+          className="flex items-center gap-2 px-5 py-2.5 bg-paper-2/90 backdrop-blur-md border border-rule/70 rounded-full shadow-xl text-xs uppercase tracking-widest text-ink font-medium hover:border-accent/40 active:scale-95 transition-all z-50"
         >
           <span className="text-accent">●</span>
           <span>{navItems.find((n) => n.href === activeSection)?.label || "Menu"}</span>
@@ -92,11 +116,11 @@ export function NavPill() {
           <>
             {/* Backdrop click-outside interceptor */}
             <div 
-              className="fixed inset-0 z-40 bg-transparent cursor-default"
+              className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm cursor-default"
               onClick={() => setIsOpen(false)}
             />
             {/* Dropdown Box */}
-            <div className="absolute top-14 left-1/2 -translate-x-1/2 w-48 p-2 bg-paper-2/95 backdrop-blur-lg border border-rule rounded-2xl shadow-xl flex flex-col gap-1.5 animate-in fade-in slide-in-from-top-4 duration-200 z-50">
+            <div className="absolute top-14 left-1/2 -translate-x-1/2 w-52 p-2 bg-paper-2/95 backdrop-blur-lg border border-rule/80 rounded-2xl shadow-2xl flex flex-col gap-1.5 animate-in fade-in slide-in-from-top-4 duration-200 z-50">
               {navItems.map((item) => {
                 const isActive = activeSection === item.href;
                 return (

@@ -16,11 +16,13 @@ interface ExperienceItem {
 const experienceData: ExperienceItem[] = [
   {
     company: "Wargi Kopi | WarKop (Contract)",
-    role: "Full Stack Engineer",
+    role: "Full Stack Engineer & DevOps",
     period: "May 2026 — Present",
-    description: "Designed and developed a full-featured Point of Sale and Admin Dashboard system for coffee shop operations — from database schema to frontend UI and REST API. The system handles daily cashier transactions, order queue management, thermal receipt printing, and administrative analytics.",
+    description: "Architected and delivered an end-to-end Point of Sale (POS) and Administrative Operations platform for a high-volume coffee shop. Beyond full-stack development, I managed the on-premise home server infrastructure, Linux system administration, and continuous web service deployment.",
     highlights: [
-      "Built a modular REST API originally prototyped with Elysia and migrated to Hono to ensure broad runtime compatibility across home server CPU architectures (Node.js/Docker).",
+      "Provisioned and maintained an on-premise Linux home server hosting the PostgreSQL database, backend service, and automated local network routing for cafe cashiers.",
+      "Managed full containerized web deployment (Docker & reverse proxy) ensuring automated service restarts, zero data corruption on power loss, and secure network isolation.",
+      "Built a modular REST API originally prototyped with Elysia and migrated to Hono to ensure broad runtime compatibility across home server CPU architectures.",
       "Designed a PostgreSQL schema with Drizzle ORM using an order snapshot pattern to preserve historical transaction accuracy.",
       "Developed a responsive POS app with Next.js and Tailwind featuring menu browsing, cart management, and CSS Print API thermal receipt integration.",
       "Implemented Progressive Web App (PWA) support to enable offline-capable, standalone tablet installations for cashiers.",
