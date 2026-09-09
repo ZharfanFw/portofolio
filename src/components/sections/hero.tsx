@@ -37,6 +37,61 @@ export function Hero() {
             Crafting high-performance backend systems with Elysia and PostgreSQL,
             backed by clean frontend integrations in Next.js.
           </motion.p>
+
+          {/* Quick Credential Badges for HR / Recruiters */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2"
+          >
+            <div className="flex flex-col p-2.5 rounded-lg bg-paper-2/80 border border-rule/70">
+              <span className="font-heading text-lg sm:text-xl font-bold text-accent leading-none">3.47</span>
+              <span className="font-mono text-[11px] text-muted uppercase tracking-wider mt-1">GPA • CS @ UPI</span>
+            </div>
+            <div className="flex flex-col p-2.5 rounded-lg bg-paper-2/80 border border-rule/70">
+              <span className="font-heading text-lg sm:text-xl font-bold text-ink leading-none">Production</span>
+              <span className="font-mono text-[11px] text-muted uppercase tracking-wider mt-1">POS & REST API</span>
+            </div>
+            <div className="flex flex-col p-2.5 rounded-lg bg-paper-2/80 border border-rule/70">
+              <span className="font-heading text-lg sm:text-xl font-bold text-accent leading-none">7+</span>
+              <span className="font-mono text-[11px] text-muted uppercase tracking-wider mt-1">Arcana Systems</span>
+            </div>
+            <div className="flex flex-col p-2.5 rounded-lg bg-paper-2/80 border border-rule/70">
+              <span className="font-heading text-lg sm:text-xl font-bold text-ink leading-none">Bun / Go / C</span>
+              <span className="font-mono text-[11px] text-muted uppercase tracking-wider mt-1">High-Throughput</span>
+            </div>
+          </motion.div>
+
+          {/* Call to Action Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-wrap items-center gap-3.5 pt-2"
+          >
+            <a
+              href="#case-study"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent text-accent-ink font-heading text-sm uppercase tracking-wider font-bold shadow-lg p3-glow hover:brightness-110 active:scale-95 transition-all"
+            >
+              <span>Explore Architecture</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </a>
+
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-paper-2/90 border border-rule/80 hover:border-accent hover:text-accent text-ink font-heading text-sm uppercase tracking-wider font-semibold active:scale-95 transition-all shadow-sm"
+            >
+              <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span>Resume / CV</span>
+            </a>
+          </motion.div>
         </div>
 
         {/* Right Side: Tier A CSS Art - The Clock of the Dark Hour */}

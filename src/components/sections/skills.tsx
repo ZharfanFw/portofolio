@@ -31,7 +31,7 @@ export function Skills() {
       <div className="flex flex-col gap-6 py-4 w-full">
         {/* Slanted P3 Section Header */}
         <SectionHeader 
-          number="05" 
+          number="06" 
           title="SKILLS" 
           subtitle="TECHNICAL STACK & INFRASTRUCTURE CAPABILITIES" 
         />

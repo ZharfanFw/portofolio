@@ -49,7 +49,7 @@ export function Projects() {
       <div className="flex flex-col gap-8 py-8 w-full">
         {/* Slanted P3 Section Header */}
         <SectionHeader 
-          number="04" 
+          number="05" 
           title="PROJECTS" 
           subtitle="FEATURED SYSTEMS & ARCHITECTURE ARCHIVES" 
         />
