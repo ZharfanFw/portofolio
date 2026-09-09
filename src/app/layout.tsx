@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "ZharfanFw — Software Engineer & Backend Developer",
-  description: "Personal portfolio of Zharfan Faza Wibawa (ZharfanFw). Full-stack & backend software engineer specializing in Hono, Elysia, PostgreSQL, and high-performance systems.",
+  description: "Portfolio of Zharfan Faza Wibawa (ZharfanFw). Full-stack & backend software engineer specializing in Hono, Elysia, PostgreSQL, and high-performance systems.",
 };
 
 export default function RootLayout({

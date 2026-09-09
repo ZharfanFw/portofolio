@@ -45,7 +45,7 @@ export function About() {
         <SectionHeader 
           number="01" 
           title="PROFILE" 
-          subtitle="PERSONAL OVERVIEW & RPG PARAMETERS" 
+          subtitle="ENGINEERING OVERVIEW & RPG PARAMETERS" 
         />
 
         <div className="flex flex-col lg:flex-row gap-12 items-start justify-between w-full">
